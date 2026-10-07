@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>EcoSwap admin dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="w admin-top"><a class="admin-brand" href="/">EcoSwap <span>Admin</span></a><a class="admin-back" href="/">← Storefront</a></div>
+  </header>
+  <main class="w admin-main">
+    <section id="admin-login" class="admin-login box">
+      <h1>Admin sign in</h1>
+      <p class="sub">Use the admin credentials configured in your server environment. First-time setup: follow the .env steps in <a href="README.txt">README.txt</a>, then restart the server.</p>
+      <form id="login-form">
+        <label>Email<input name="email" type="email" required autocomplete="username"></label>
+        <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
+        <p id="login-error" class="admin-error" role="alert"></p>
+        <button class="btn m">Sign in to dashboard</button>
+      </form>
+    </section>
+    <div id="dashboard" class="hid">
+      <div class="dashboard-title"><div><p class="eyebrow">STORE OVERVIEW</p><h1>Sales dashboard</h1><p id="admin-email" class="sub"></p></div><button id="admin-logout" class="btn o">Sign out</button></div>
+      <section class="admin-filters box">
+        <label>From<input id="from-date" type="date"></label>
+        <label>To<input id="to-date" type="date"></label>
+        <button id="apply-filters" class="btn">Apply dates</button>
+        <button id="export-csv" class="btn o">Export product sales CSV</button>
+      </section>
+      <section class="admin-kpis" aria-label="Sales summary">
+        <article class="box"><small>Orders</small><b id="kpi-orders">0</b></article>
+        <article class="box"><small>Total order value <span title="Includes COD orders and demo payment selections; no payment is processed.">(not payment settlement)</span></small><b id="kpi-revenue">₹0</b></article>
+        <article class="box"><small>Average order value</small><b id="kpi-average">₹0</b></article>
+      </section>
+      <section class="box admin-section">
+        <div class="dashboard-title"><div><h2>Product performance</h2><p class="sub">Compare units ordered, distinct orders containing the product, and order value. Demo payment selections are not charged.</p></div>
+          <label>Rank by<select id="rank-by"><option value="units">Units ordered</option><option value="orders">Orders containing product</option><option value="orderValue">Order value</option></select></label>
+        </div>
+        <div class="table-scroll"><table><thead><tr><th>Rank</th><th>Product</th><th>Units ordered</th><th>Orders</th><th>Product order value</th></tr></thead><tbody id="ranking-rows"></tbody></table></div>
+        <div class="chart-wrap"><h3>Order value by day</h3><div id="sales-chart" aria-label="Order value by day"></div></div>
+      </section>
+      <section class="box admin-section">
+        <h2>Orders</h2><p class="sub">Update fulfilment status. Cancelling an order restores its stock.</p>
+        <div class="table-scroll"><table><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Payment method</th><th>Status</th><th>Fulfilment</th></tr></thead><tbody id="order-rows"></tbody></table></div>
+      </section>
+      <section class="box admin-section">
+        <h2>Products &amp; inventory</h2><p class="sub">Update prices and stock or temporarily hide a product from the shop.</p>
+        <div class="table-scroll"><table><thead><tr><th>Product</th><th>Price (₹)</th><th>Stock</th><th>Visible</th><th>Save</th></tr></thead><tbody id="product-rows"></tbody></table></div>
+      </section>
+    </div>
+    <p id="dashboard-message" class="toast" role="status"></p>
+  </main>
+  <script src="js/admin.js"></script>
+</body>
+</html>

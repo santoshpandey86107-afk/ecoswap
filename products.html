@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Browse thoughtful organic food, skincare, household and clothing swaps at EcoSwap.">
+  <title>Shop products | EcoSwap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><div class="w nav product-nav">
+    <a class="brand" href="/" aria-label="EcoSwap home">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="white"/>
+        <path d="M33.9 11.8c-9.7.3-16.4 3.1-18.1 9.1-1.1 3.8 1.4 6.7 5.1 6.1 6.3-1 10.4-8.3 13-15.2Z" fill="#2f8a5a"/>
+        <path d="M14 35.7c.2-8.9 3.4-14.8 9.1-16.2 3.5-.8 6.1 1.5 5.5 4.8-.9 5.6-7.8 9.4-14.6 11.4Z" fill="#f0a53a"/>
+        <path d="M15 35c4.3-6.4 8.6-10.6 14.6-15.1" fill="none" stroke="#14502f" stroke-linecap="round" stroke-width="2.1"/>
+        <path d="M11 16.3a16 16 0 0 1 23.5-3.1M37 31.7a16 16 0 0 1-23.5 3.1" fill="none" stroke="#2f8a5a" stroke-linecap="round" stroke-width="1.8"/>
+      </svg>
+      <span class="brand-copy"><span class="brand-name"><span>Eco</span><b>Swap</b></span><span class="brand-tagline">Conscious choices, greener living</span></span>
+    </a>
+    <div class="product-nav-row">
+      <a class="back-home" href="/">← Home</a>
+      <label class="product-search"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Search products, makers or swaps" aria-label="Search products"></label>
+      <div class="product-nav-actions"><button id="theme-toggle" class="ib" aria-label="Toggle theme">◐</button><button id="account-button" class="ib">Account</button><button id="wishlist-button" class="ib">♥ <span id="wishlist-count">0</span></button><a class="ib product-cart-link" href="/?cart=1">🛒 <span id="cart-count">0</span></a></div>
+    </div>
+  </div></header>
+
+  <main class="w product-main">
+    <section class="product-intro">
+      <a href="/" class="breadcrumb">Home</a><span aria-hidden="true"> / </span><span>Shop</span>
+      <span class="eyebrow">THOUGHTFULLY SOURCED, READY TO DISCOVER</span>
+      <h1 id="listing-title">Find your next feel-good swap.</h1>
+      <p>Explore certified organic staples and considerate everyday essentials, with clear prices and the story behind every find.</p>
+    </section>
+    <section class="catalogue" aria-label="Product catalogue">
+      <div class="catalogue-heading"><div><h2>Shop by category</h2><p class="sub" id="result-count"></p></div>
+        <label class="catalogue-sort">Sort by<select id="product-sort"><option value="featured">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="rating">Top rated</option></select></label>
+      </div>
+      <nav class="catalogue-categories" id="product-categories" aria-label="Product categories"></nav>
+      <div class="catalogue-filters">
+        <label><input type="checkbox" id="plastic-filter"> Plastic-free packaging</label>
+        <label><input type="checkbox" id="season-filter"> In season now</label>
+        <label><input type="checkbox" id="distance-filter"> Within 500 km</label>
+      </div>
+      <div class="grid product-grid" id="product-grid"></div>
+      <div id="empty-results" class="empty-results hid"><span aria-hidden="true">🌿</span><h2>No swaps found just yet.</h2><p>Try another search or clear a filter to see more products.</p><button id="clear-filters" class="btn o">Clear filters</button></div>
+    </section>
+  </main>
+  <footer><div class="w"><a href="/">← Back to EcoSwap home</a> · Every product lists its maker and sourcing details.</div></footer>
+
+  <div class="ov" id="product-modal"><div class="md" id="product-details"></div></div>
+  <div class="ov" id="customer-modal"><div class="md auth-panel" id="customer-auth"></div></div>
+  <div class="toast" id="product-toast" role="status"></div>
+  <script src="js/products.js"></script>
+</body>
+</html>

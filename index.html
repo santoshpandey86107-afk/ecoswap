@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>EcoSwap – Swap to organic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header><div class="w nav">
+<a class="brand" href="#top" aria-label="EcoSwap home">
+<svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+<circle cx="24" cy="24" r="23" fill="white"/>
+<path d="M33.9 11.8c-9.7.3-16.4 3.1-18.1 9.1-1.1 3.8 1.4 6.7 5.1 6.1 6.3-1 10.4-8.3 13-15.2Z" fill="#2f8a5a"/>
+<path d="M14 35.7c.2-8.9 3.4-14.8 9.1-16.2 3.5-.8 6.1 1.5 5.5 4.8-.9 5.6-7.8 9.4-14.6 11.4Z" fill="#f0a53a"/>
+<path d="M15 35c4.3-6.4 8.6-10.6 14.6-15.1" fill="none" stroke="#14502f" stroke-linecap="round" stroke-width="2.1"/>
+<path d="M11 16.3a16 16 0 0 1 23.5-3.1M37 31.7a16 16 0 0 1-23.5 3.1" fill="none" stroke="#2f8a5a" stroke-linecap="round" stroke-width="1.8"/>
+<path d="m32.5 9.9 3.6 3.1-4.5 1.5M15.5 38.1l-3.6-3.1 4.5-1.5" fill="#2f8a5a"/>
+</svg>
+<span class="brand-copy"><span class="brand-name"><span>Eco</span><b>Swap</b></span><span class="brand-tagline">Conscious choices, greener living</span></span>
+</a>
+<div class="nav-row">
+<nav class="nav-links" aria-label="Main navigation"><a href="/products.html" data-i="shop">Shop</a><a href="#why" data-i="why">Why organic</a><a href="#box" data-i="box">Boxes</a></nav>
+<input id="q" placeholder="Search products" aria-label="Search" data-ph="search">
+<div class="nav-actions"><button class="ib" id="lang">हिं</button><button class="ib" id="th" aria-label="Theme">◐</button><button class="ib" id="acc">Account</button><button class="ib" id="wlb">♥ <span id="wc">0</span></button><button class="ib" id="cb">🛒 <span id="cc">0</span></button></div>
+</div></div></header>
+
+<main class="w" id="top">
+<section class="home-hero">
+  <div class="home-copy"><span class="eyebrow">A LITTLE BETTER, EVERY DAY</span><h1>Good for your home.<br><span>Gentler on our planet.</span></h1>
+    <p>Discover thoughtful everyday swaps, from farm-fresh organic food to kinder home and personal care. Know who made it, where it came from, and why it matters.</p>
+    <div class="home-actions"><button class="btn m" onclick="document.querySelector('#categories').scrollIntoView({behavior:'smooth'})">Explore categories</button><a class="text-link" href="#why">Why choose organic? <span aria-hidden="true">→</span></a></div>
+    <div class="hero-promises"><span><b>01</b> Farm-to-home finds</span><span><b>02</b> Thoughtful materials</span><span><b>03</b> People-first makers</span></div>
+  </div>
+  <div class="showcase"><div class="showcase-heading"><div><span class="eyebrow">MEET YOUR NEXT SWAP</span><h2>Small swaps, feel-good finds.</h2></div><div class="carousel-controls"><button id="slide-prev" aria-label="Previous products">←</button><button id="slide-next" aria-label="Next products">→</button></div></div>
+    <div class="carousel-viewport"><div class="carousel-track" id="product-carousel" aria-label="Featured products"></div></div>
+    <div class="carousel-foot"><span id="carousel-count">A few of our favourites</span><span class="glide-dots" id="carousel-dots" aria-label="Carousel pages"></span></div>
+  </div>
+</section>
+
+<section class="benefits" aria-label="EcoSwap benefits">
+  <article><span class="benefit-icon">🌱</span><div><h3>Choices with care</h3><p>Discover organic and lower-impact everyday alternatives.</p></div></article>
+  <article><span class="benefit-icon">🤝</span><div><h3>Know your maker</h3><p>Meet the farmers and small businesses behind each find.</p></div></article>
+  <article><span class="benefit-icon">♻️</span><div><h3>Less waste, more good</h3><p>Find plastic-free packaging and thoughtful materials.</p></div></article>
+</section>
+
+<section id="categories" class="category-section"><div class="section-intro"><div><span class="eyebrow">FIND YOUR KIND OF GOOD</span><h2>Browse by category</h2><p class="sub">Choose a collection to open its products and prices.</p></div><a class="btn o" href="/products.html">Explore all products <span aria-hidden="true">→</span></a></div><div class="category-grid" id="category-cards"></div></section>
+
+<section id="why"><h2 data-i="why">Why organic?</h2><p class="sub">Compare what conventional (synthetic) and organic options do. Pick a category.</p>
+<div class="bar" id="wt"></div><div class="cmp"><div class="bd"><h3>Conventional / synthetic</h3><p id="wb"></p></div><div class="gd"><h3>Organic alternative</h3><p id="wg"></p></div></div>
+<p class="src">Evidence is strongest for pesticide residues, soil health, biodiversity and water pollution. Evidence on nutrition differences is mixed, so we do not claim it. Organic farms also use some approved natural pesticides. Sources: FAO, WHO, UNEP and peer-reviewed meta-analyses (e.g. Tuck et al. 2014, Sánchez-Bayo &amp; Wyckhuys 2019).</p></section>
+
+<section><h2>Your impact</h2><p class="sub">Estimates from the organic items in your cart and past orders. Figures are illustrative averages per item, not audited.</p>
+<div class="box"><div class="stats"><div><b id="i1">0</b>g plastic avoided</div><div><b id="i2">0</b>synthetic-treated items swapped</div><div><b id="i3">0</b>farmers supported</div></div></div></section>
+
+<section id="box"><h2 data-i="box">Weekly boxes</h2><p class="sub">Seasonal, local, delivered on your schedule. Pause or cancel anytime.</p>
+<form id="sf"><div class="sub2"><label><input type="radio" name="bx" value="Veg box ₹499" checked hidden><span><b>🥬 Veg box</b><br>₹499 / week, 6 kg</span></label><label><input type="radio" name="bx" value="Pantry box ₹899" hidden><span><b>🌾 Pantry box</b><br>₹899 / month</span></label><label><input type="radio" name="bx" value="Home box ₹649" hidden><span><b>🧼 Home care box</b><br>₹649 / month</span></label></div>
+<p><select name="fr" style="max-width:240px"><option>Every week</option><option>Every 2 weeks</option><option>Every month</option></select> <button class="btn" type="submit">Subscribe</button> <span id="sm" class="sub"></span></p></form></section>
+</main>
+
+<footer><div class="w"><b>🌿 EcoSwap</b> · FSSAI Lic. No. 1000XXXXXXXXXX (demo) · Certified under NPOP / Jaivik Bharat · <a href="https://jaivikbharat.fssai.gov.in" target="_blank" rel="noopener">Verify organic logo</a><br>Support: <a href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp</a> · help@ecoswap.example · Privacy · Terms · Returns within 7 days<br><small>Demo store: certificate numbers, farms and prices are sample data.</small></div></footer>
+
+<div class="ov" id="pm"><div class="md" id="pb"></div></div>
+<div class="ov dr" id="cd"><div class="md" id="cbx"></div></div>
+<div class="ov" id="om"><div class="md" id="ob"></div></div>
+<div class="ov" id="am"><div class="md auth-panel" id="ab"></div></div>
+<div class="toast" id="ts" role="status"></div>
+
+<script src="js/app.js"></script></body></html>
